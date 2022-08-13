@@ -1,6 +1,4 @@
-import { SignUp } from "./SignUp/SignUp";
-import { LandingPage } from "./Landing Page/LandingPage";
-export {
-    SignUp,
-    LandingPage
-}
+import { UserType } from "./UserType/UserType";
+import SignUp from "./SignUp/index";
+import LandingPage from "./LandingPage/LandingPage";
+export { SignUp, LandingPage, UserType };
