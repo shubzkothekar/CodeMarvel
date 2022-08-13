@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserType } from "./Pages";
 import About from "./components/Stepper/About";
 import Stage from "./components/Stepper/Stage";
+import BasicInfo from "./Pages/BasicInfo";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Route exact path="/contact" element={<Contact />} />
 				<Route exact path="/about" element={<About />} />
 				<Route exact path="/stage" element={<Stage />} />
+				<Route exact path="/basic-info" element={<BasicInfo />} />
 			</Routes>
 		</div>
 	);
