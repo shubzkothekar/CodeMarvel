@@ -1,33 +1,50 @@
 import "./SignUp.css"
 
+const cardAssets = [
+    {
+        name: "STARTUP",
+        image_url: "startup.svg"
+    },
+    {
+        name: "INVESTOR",
+        image_url: "investor.svg"
+    },
+    {
+        name: "MENTOR",
+        image_url: "professor.svg"
+    },
+    {
+        name: "INCUBATOR",
+        image_url: "incubator.svg"
+    },
+    {
+        name: "ACCELERATOR",
+        image_url: "accelerator.svg"
+    },
+    {
+        name: "CORPORATE",
+        image_url: "corporate.svg"
+    }
+]
+
 export const SignUp = () => {
     return (
         <div className="signUp-page">
             <div className="card-box">
-                <div className="card">
-                    <div className="image-holder">
-                        <img src="assets/startup.svg" alt="start-up" />
-                    </div>
-                    <p className="card-name">
-                       <strong>STARTUP</strong>
-                    </p>
-                </div>
-                <div className="card">
-                    <div className="image-holder">
-                        <img src="assets/investor.svg" alt="investor" />
-                    </div>
-                    <p className="card-name">
-                       <strong>INVESTOR</strong>
-                    </p>
-                </div>
-                <div className="card">
-                    <div className="image-holder">
-                        <img src="assets/job-hiring.svg" alt="job-hiring" />
-                    </div>
-                    <p className="card-name">
-                       <strong> HIRING</strong>
-                    </p>
-                </div>
+               {
+                cardAssets.map(({name, image_url}) => {
+                    return (
+                        <div className="card">
+                            <div className="image-holder">
+                                <img src={`assets/${image_url}`} alt="start-up" />
+                            </div>
+                            <p className="card-name">
+                            <strong>{name}</strong>
+                            </p>
+                        </div>
+                    )
+                })
+               }
             </div>
         </div>
     )
