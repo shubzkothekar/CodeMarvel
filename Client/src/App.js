@@ -7,15 +7,15 @@ import { SignUp } from './Pages';
 function App() {
 
   return (
-    <Router>
+   
     <div className="App">
     <Routes>
-     <Route path="/sign-up" element={<SignUp/>}/>
-    <Route exact path="/" element={<SignUpForm/>}/>
+     <Route path="/" element={<SignUp/>}/>
+    <Route exact path="/sign-up" element={<SignUpForm/>}/>
     <Route exact path="/contact" element={<Contact/>}/>
     </Routes>
     </div>
-    </Router>
+   
   );
 }
 

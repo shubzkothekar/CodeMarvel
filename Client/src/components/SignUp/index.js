@@ -53,7 +53,7 @@ const SignUpForm = () => {
   <br></br>
   <br></br>
   
-  <FormLabel id="demo-radio-buttons-group-label">Funded/Bootstraped?</FormLabel>
+  
 
   <RadioGroup
        row
