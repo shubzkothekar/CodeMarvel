@@ -1,8 +1,8 @@
-import "./App.css";
+// import "./App.css";
 import SignUpForm from "./components/SignUp";
 import Contact from "./components/SignUp/contact";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { SignUp } from "./Pages";
+import { UserType } from "./Pages";
 import About from "./components/Stepper/About";
 import Stage from "./components/Stepper/Stage";
 
@@ -10,7 +10,7 @@ function App() {
 	return (
 		<div className="App">
 			<Routes>
-				<Route path="/" element={<SignUp />} />
+				<Route path="/user-type" element={<UserType />} />
 				<Route exact path="/sign-up" element={<SignUpForm />} />
 				<Route exact path="/contact" element={<Contact />} />
 				<Route exact path="/about" element={<About />} />

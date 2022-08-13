@@ -1,4 +1,4 @@
-import "./SignUp.css"
+import "./UserType.css"
 
 const cardAssets = [
     {
@@ -27,7 +27,7 @@ const cardAssets = [
     }
 ]
 
-export const SignUp = () => {
+export const UserType = () => {
     return (
         <div className="signUp-page">
             <div className="card-box">

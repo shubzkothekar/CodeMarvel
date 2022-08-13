@@ -1,4 +1,2 @@
-import { SignUp } from "./SignUp/SignUp";
-export {
-    SignUp
-}
+import { UserType } from "./UserType/UserType";
+export { UserType };
