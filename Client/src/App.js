@@ -9,6 +9,7 @@ import ContactInfo from "./Pages/ContactInfo/index"
 import SignUp from "./Pages/SignUp/index";
 
 import BasicInfo from "./Pages/BasicInfo";
+import Invest from "./components/Investors";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <Route exact path="/stage" element={<Stage />} />
 
         <Route exact path="/basic-info" element={<BasicInfo />} />
+
+        {/*Investor Route*/}
+        <Route exact path="/invest" element={<Invest/>}/>
       </Routes>
     </div>
   );
