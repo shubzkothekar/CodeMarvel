@@ -9,21 +9,22 @@ import Stage from "./components/Stepper/Stage";
 import SignUp from "./Pages/SignUp/index";
 
 import BasicInfo from "./Pages/BasicInfo";
+import Categories from "./Pages/Categories";
 
 function App() {
-  return (
-    <div className="App">
-      <Routes>
-        <Route path="/user-type" element={<UserType />} />
-        <Route exact path="/sign-up" element={<SignUp />} />
-        <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/stage" element={<Stage />} />
-
-        <Route exact path="/basic-info" element={<BasicInfo />} />
-      </Routes>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Routes>
+				<Route path="/user-type" element={<UserType />} />
+				<Route exact path="/sign-up" element={<SignUp />} />
+				<Route exact path="/contact" element={<Contact />} />
+				<Route exact path="/about" element={<About />} />
+				<Route exact path="/stage" element={<Stage />} />
+				<Route exact path="/basic-info" element={<BasicInfo />} />
+				<Route exact path="/categories" element={<Categories />} />
+			</Routes>
+		</div>
+	);
 }
 
 export default App;

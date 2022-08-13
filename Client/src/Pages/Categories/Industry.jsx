@@ -41,7 +41,7 @@ function getStyles(name, personName, theme) {
 	};
 }
 
-export default function MultipleSelectChip() {
+export default function Industry() {
 	const theme = useTheme();
 	const [personName, setPersonName] = React.useState([]);
 
@@ -57,15 +57,15 @@ export default function MultipleSelectChip() {
 
 	return (
 		<div>
-			<FormControl fullwidth sx={{ m: 1, width: "80vw" }}>
-				<InputLabel id="demo-multiple-chip-label">Chip</InputLabel>
+			<FormControl fullwidth sx={{ marginBottom: 1, width: "100%" }}>
+				<InputLabel id="demo-multiple-chip-label">Industry</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"
 					id="demo-multiple-chip"
 					multiple
 					value={personName}
 					onChange={handleChange}
-					input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+					input={<OutlinedInput id="select-multiple-chip" label="Industry" />}
 					renderValue={(selected) => (
 						<Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
 							{selected.map((value) => (

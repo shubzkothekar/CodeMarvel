@@ -22,7 +22,7 @@ const BasicInfo = () => {
 	}
 
 	return (
-		<div style={{ margin: "5% 25% 25% 25%" }}>
+		<div style={{ margin: "20% 25% 25% 25%" }}>
 			<Box
 				component="form"
 				sx={{
@@ -52,6 +52,7 @@ const BasicInfo = () => {
 					rows={4}
 				/>
 				<Button
+					onClick={() => (window.location.href = "/categories")}
 					sx={{
 						background: "#FF725E",
 						padding: "8px",

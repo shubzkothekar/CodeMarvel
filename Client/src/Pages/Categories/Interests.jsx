@@ -19,26 +19,37 @@ const MenuProps = {
 	},
 };
 
-const names = ["Ideation", "Validation", "Early traction", "Scaling"];
+const names = [
+	"Oliver Hansen",
+	"Van Henry",
+	"April Tucker",
+	"Ralph Hubbard",
+	"Omar Alexander",
+	"Carlos Abbott",
+	"Miriam Wagner",
+	"Bradley Wilkerson",
+	"Virginia Andrews",
+	"Kelly Snyder",
+];
 
-function getStyles(name, IdeaName, theme) {
+function getStyles(name, personName, theme) {
 	return {
 		fontWeight:
-			IdeaName.indexOf(name) === -1
+			personName.indexOf(name) === -1
 				? theme.typography.fontWeightRegular
 				: theme.typography.fontWeightMedium,
 	};
 }
 
-export default function Stage() {
+export default function Industry() {
 	const theme = useTheme();
-	const [IdeaName, setIdeaName] = React.useState([]);
+	const [personName, setPersonName] = React.useState([]);
 
 	const handleChange = (event) => {
 		const {
 			target: { value },
 		} = event;
-		setIdeaName(
+		setPersonName(
 			// On autofill we get a stringified value.
 			typeof value === "string" ? value.split(",") : value
 		);
@@ -46,22 +57,15 @@ export default function Stage() {
 
 	return (
 		<div>
-			<FormControl sx={{ m: 1, width: 300 }}>
-				<InputLabel id="demo-multiple-chip-label">
-					Preffered Startup Stage
-				</InputLabel>
+			<FormControl fullwidth sx={{ marginBottom: 2, width: "100%" }}>
+				<InputLabel id="demo-multiple-chip-label">Interests</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"
 					id="demo-multiple-chip"
 					multiple
-					value={IdeaName}
+					value={personName}
 					onChange={handleChange}
-					input={
-						<OutlinedInput
-							id="select-multiple-chip"
-							label="Preffered Startup Stage"
-						/>
-					}
+					input={<OutlinedInput id="select-multiple-chip" label="Interests" />}
 					renderValue={(selected) => (
 						<Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
 							{selected.map((value) => (
@@ -75,7 +79,7 @@ export default function Stage() {
 						<MenuItem
 							key={name}
 							value={name}
-							style={getStyles(name, IdeaName, theme)}
+							style={getStyles(name, personName, theme)}
 						>
 							{name}
 						</MenuItem>
