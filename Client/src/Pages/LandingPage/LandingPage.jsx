@@ -10,13 +10,12 @@ const LandingPage = () => {
 			</div>
 			<div className="landing-page-content">
 				<section className="landing-content">
-					<h1>Accelerate your Startup.</h1>
+					<h1>Accelerate your Startup Growth 🚀.</h1>
 					<p>
-						Fuel your start. Run Your Idea is the gateway to Maker's
-						first-of-its kind, global network of startup support. A platform
-						that connects startups and investors for funding, support, and
-						mentorship.
+						Fuel your startup. Join a platform that connects startups and
+						investors for funding, support, and mentorship.
 					</p>
+					<br />
 					<div className="action-box">
 						<button
 							onClick={() => (window.location.href = "/login")}

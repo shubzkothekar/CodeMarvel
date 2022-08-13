@@ -28,15 +28,22 @@ const cardAssets = [
 ];
 
 export const UserType = () => {
+	const handleNext = (name) => {
+		localStorage.setItem("type", name);
+		console.log(localStorage.getItem("type"));
+		window.location.href = "/basic-info";
+	};
+
 	return (
 		<div className="signUp-page">
 			<div className="card-box">
 				{cardAssets.map(({ name, image_url }) => {
 					return (
 						<div
+							key={name}
 							className="card"
 							onClick={() => {
-								window.location.href = "/basic-info";
+								handleNext(name);
 							}}
 						>
 							<div className="image-holder">

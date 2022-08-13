@@ -39,6 +39,10 @@ export default function Interests() {
 		const {
 			target: { value },
 		} = event;
+		localStorage.setItem(
+			"interests",
+			JSON.stringify(typeof value === "string" ? value.split(",") : value)
+		);
 		setPersonName(
 			// On autofill we get a stringified value.
 			typeof value === "string" ? value.split(",") : value
@@ -47,7 +51,7 @@ export default function Interests() {
 
 	return (
 		<div>
-			<FormControl sx={{ marginBottom: 2, width: "100%" }}>
+			<FormControl sx={{ marginBottom: 3, width: "100%" }}>
 				<InputLabel id="demo-multiple-chip-label">Interests</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"

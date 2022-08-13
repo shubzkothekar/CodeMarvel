@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import placeholderImg from "./imgplaceholder.jpeg";
 const BasicInfo = () => {
 	const [img, setImg] = React.useState(placeholderImg);
+	const [name, setName] = React.useState("");
+	const [about, setAbout] = React.useState("");
 
 	const selectFile = () => {
 		document.getElementById("userImg").click();
@@ -21,8 +23,16 @@ const BasicInfo = () => {
 		}
 	}
 
+	const handleNext = () => {
+		localStorage.setItem("image", img);
+		localStorage.setItem("name", name);
+		localStorage.setItem("about", about);
+
+		window.location.href = "/categories";
+	};
+
 	return (
-		<div style={{ margin: "20% 25% 25% 25%" }}>
+		<div style={{ margin: "3% 25% 3% 25%" }}>
 			<Box
 				component="form"
 				sx={{
@@ -52,10 +62,10 @@ const BasicInfo = () => {
 					rows={4}
 				/>
 				<Button
-					onClick={() => (window.location.href = "/categories")}
+					onClick={() => handleNext()}
 					sx={{
 						background: "#FF725E",
-						padding: "8px",
+						padding: "12px",
 						color: "white",
 						"&:hover": {
 							backgroundColor: "#FF725E",

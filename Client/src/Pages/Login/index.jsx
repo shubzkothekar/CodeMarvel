@@ -8,7 +8,7 @@ const index = () => {
 			<Box
 				component="form"
 				sx={{
-					"& > :not(style)": { m: 1, width: "100%" },
+					"& > :not(style)": { m: 2, width: "100%" },
 				}}
 				noValidate
 				autoComplete="off"
@@ -30,7 +30,7 @@ const index = () => {
 					onClick={() => (window.location.href = "/user-type")}
 					sx={{
 						background: "#FF725E",
-						padding: "8px",
+						padding: "12px",
 						color: "white",
 						"&:hover": {
 							backgroundColor: "#FF725E",

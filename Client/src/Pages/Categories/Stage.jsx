@@ -38,6 +38,11 @@ export default function Industry() {
 		const {
 			target: { value },
 		} = event;
+		localStorage.setItem(
+			"stage",
+			JSON.stringify(typeof value === "string" ? value.split(",") : value)
+		);
+
 		setPersonName(
 			// On autofill we get a stringified value.
 			typeof value === "string" ? value.split(",") : value
@@ -46,12 +51,12 @@ export default function Industry() {
 
 	return (
 		<div>
-			<FormControl sx={{ marginBottom: 1, width: "100%" }}>
+			<FormControl sx={{ marginBottom: 3, width: "100%" }}>
 				<InputLabel id="demo-multiple-chip-label">Preffered Stage</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"
 					id="demo-multiple-chip"
-					multiple
+					multiple={localStorage.getItem("type") === "STARTUP" ? false : true}
 					value={personName}
 					onChange={handleChange}
 					input={

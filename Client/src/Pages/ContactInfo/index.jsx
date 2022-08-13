@@ -5,15 +5,22 @@ import MuiPhoneNumber from "material-ui-phone-number";
 
 const ContactInfo = () => {
 	const [email, setEmail] = useState("");
-	const [website, setWebiste] = useState("");
+	const [website, setWebsite] = useState("");
 	const [mobile, setMobile] = useState("");
-	const [city, setCity] = useState("");
+	const [loading, setLoading] = useState(false);
+
+	const handleNext = () => {
+		localStorage.setItem("contactEmail", email);
+		localStorage.setItem("website", website);
+		localStorage.setItem("mobile", mobile);
+	};
+
 	return (
-		<div style={{ margin: "20% 25% 25% 25%" }}>
+		<div style={{ margin: "15% 25% 12% 25%" }}>
 			<Box
 				component="form"
 				sx={{
-					"& > :not(style)": { m: 1, width: "100%" },
+					"& > :not(style)": { m: 2, width: "100%" },
 				}}
 				noValidate
 				autoComplete="off"
@@ -28,26 +35,28 @@ const ContactInfo = () => {
 					id="outlined-basic"
 					label="Website"
 					variant="outlined"
-					onChange={(e) => setWebiste(e.target.value)}
+					onChange={(e) => setWebsite(e.target.value)}
 				/>
-				<TextField
+				{/*<TextField
 					id="outlined-basic"
 					label="City"
 					variant="outlined"
 					onChange={(e) => setCity(e.target.value)}
-				/>
+			/>*/}
 
 				<MuiPhoneNumber
 					variant="outlined"
 					regions={["america", "europe", "asia", "oceania", "africa"]}
 					label="Phone"
 					defaultCountry={"in"}
-					onChange={(e) => setMobile(e.target.value)}
+					value={mobile}
+					onChange={setMobile}
 				/>
 				<Button
+					onClick={() => handleNext()}
 					sx={{
 						background: "#FF725E",
-						padding: "8px",
+						padding: "12px",
 						color: "white",
 						"&:hover": {
 							backgroundColor: "#FF725E",

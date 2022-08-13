@@ -8,7 +8,7 @@ import Interests from "./Interests";
 
 const Categories = () => {
 	return (
-		<div style={{ margin: "20% 25% 25% 25%" }}>
+		<div style={{ margin: "15% 25% 15% 25%" }}>
 			<Stage />
 			<Industry />
 			<Interests />
@@ -18,7 +18,7 @@ const Categories = () => {
 					sx={{
 						width: "100%",
 						background: "#FF725E",
-						padding: "8px",
+						padding: "12px",
 						color: "white",
 						"&:hover": {
 							backgroundColor: "#FF725E",
