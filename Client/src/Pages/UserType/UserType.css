@@ -3,7 +3,7 @@
 
 .signUp-page {
    
-    margin: 5rem;
+    margin: 2rem;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -18,13 +18,16 @@
 
 
 
-.signUp-page .card {
-    width: clamp(18rem , 20rem, 22rem);
-    height: 26rem;
+
+.card {
+    /* width: clamp(18rem , 20rem, 10rem); */
+    width : 16rem;
+    height: 21rem;
     border-radius: 0.3rem;
     cursor: pointer;
     transition: 0.2s ease-out;
     margin:1rem; 
+    box-shadow: 0 0 4px -1px #353434;
 }
 
 .card img {
