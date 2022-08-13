@@ -6,6 +6,7 @@ import SignUp from "./Pages/SignUp/index";
 import BasicInfo from "./Pages/BasicInfo";
 import Categories from "./Pages/Categories";
 import Login from "./Pages/Login/index";
+import LandingPage from "./Pages/LandingPage/LandingPage";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route exact path="/basic-info" element={<BasicInfo />} />
 				<Route exact path="/categories" element={<Categories />} />
 				<Route exact path="/login" element={<Login />} />
+				<Route path="/" element={<LandingPage />} />
 			</Routes>
 		</div>
 	);

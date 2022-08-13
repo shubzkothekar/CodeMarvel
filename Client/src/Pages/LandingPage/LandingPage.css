@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+
+.landing-page-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 93vh;
+    margin:2rem;
+}
+
+.landing-content {
+    width: 40%;
+    min-width: 45rem;
+    text-align: left;
+    margin:2rem;
+}
+
+.landing-content p {
+    font-size: 1.4rem;
+}
+
+.landing-content .action-box {
+    display: flex;
+    gap: 1rem;
+}
+
+.landing-content .action-box button {
+    padding: 12px 0;
+    width: 20%;
+    min-width:10rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1.2rem;
+}
+
+button.btn-login {
+    background-color: #FF725E;
+} 
+
+button.btn-sign-up {
+    background-color: #FFD4CE;
+} 
+
+.landing-page-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin:0;
+}
+
+.background .blob {
+    position: fixed;
+    transform: translate(-20rem, -30rem);
+    z-index:-1;
+}
+
+.header-image-container {
+    width: 40%;
+    min-width: 45rem;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    .landing-page-content {
+        flex-wrap: wrap-reverse;
+    }
+
+    .background .blob {
+        transform: translate(-20rem, -30rem);
+        transform: scale(2,2)
+    }
+}
+
+@media (max-width: 750px) {
+    html {
+        font-size: 12px;
+    }
+
+    .background .blob {
+        transform: scale(3,3)
+    }
+
+    .landing-content {
+        min-width: 30rem;
+    }
+
+    .header-image-container {
+        min-width: 35rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+
+    .landing-content .action-box button {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 320px) {
+    html {
+        font-size: 9px;
+    }
+
+}
