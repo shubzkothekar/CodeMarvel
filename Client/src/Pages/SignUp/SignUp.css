@@ -1,0 +1,41 @@
+/* signup cards */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+.signUp-page {
+    margin: 5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.signUp-page .card-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    flex-wrap: wrap;
+
+}
+
+.signUp-page .card {
+    width: clamp(18rem , 20rem, 22rem);
+    height: 26rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    margin:1rem;
+}
+
+.card img {
+    display:block;
+    margin: 0 auto;
+}
+
+.card p {
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.signUp-page .card:hover {
+    transform: scale(1.1,1.1);
+    box-shadow: 0 0 4px -1px #353434;
+
+}
