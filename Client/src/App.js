@@ -1,6 +1,5 @@
 // import "./App.css";
-import SignUpForm from "./components/SignUp";
-import Contact from "./components/SignUp/contact";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserType } from "./Pages";
 import About from "./components/Stepper/About";
