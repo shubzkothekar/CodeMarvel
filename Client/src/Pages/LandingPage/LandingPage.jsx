@@ -18,10 +18,16 @@ const LandingPage = () => {
 						mentorship.
 					</p>
 					<div className="action-box">
-						<button className="btn-login">
+						<button
+							onClick={() => (window.location.href = "/login")}
+							className="btn-login"
+						>
 							<strong>Log In</strong>
 						</button>
-						<button className="btn-sign-up">
+						<button
+							onClick={() => (window.location.href = "/sign-up")}
+							className="btn-sign-up"
+						>
 							<strong>Sign Up</strong>
 						</button>
 					</div>
