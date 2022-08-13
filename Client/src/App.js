@@ -7,7 +7,7 @@ import BasicInfo from "./Pages/BasicInfo";
 import Categories from "./Pages/Categories";
 import Login from "./Pages/Login/index";
 import LandingPage from "./Pages/LandingPage/LandingPage";
-
+import UserProfile from "./Pages/UserProfile/index"
 function App() {
 	return (
 		<div className="App">
@@ -19,6 +19,7 @@ function App() {
 				<Route exact path="/categories" element={<Categories />} />
 				<Route exact path="/login" element={<Login />} />
 				<Route path="/" element={<LandingPage />} />
+        <Route path="/user-profile" element={<UserProfile/>}/>
 			</Routes>
 		</div>
 	);
