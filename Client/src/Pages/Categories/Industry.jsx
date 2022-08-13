@@ -7,6 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
+import industriesData from "../data/industries";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -19,18 +20,7 @@ const MenuProps = {
 	},
 };
 
-const names = [
-	"Oliver Hansen",
-	"Van Henry",
-	"April Tucker",
-	"Ralph Hubbard",
-	"Omar Alexander",
-	"Carlos Abbott",
-	"Miriam Wagner",
-	"Bradley Wilkerson",
-	"Virginia Andrews",
-	"Kelly Snyder",
-];
+const names = industriesData;
 
 function getStyles(name, personName, theme) {
 	return {
@@ -57,7 +47,7 @@ export default function Industry() {
 
 	return (
 		<div>
-			<FormControl fullwidth sx={{ marginBottom: 1, width: "100%" }}>
+			<FormControl sx={{ marginBottom: 1, width: "100%" }}>
 				<InputLabel id="demo-multiple-chip-label">Industry</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"

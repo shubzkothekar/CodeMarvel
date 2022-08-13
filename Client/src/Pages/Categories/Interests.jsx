@@ -7,6 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Chip from "@mui/material/Chip";
+import interestData from "../data/interest";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -19,18 +20,7 @@ const MenuProps = {
 	},
 };
 
-const names = [
-	"Oliver Hansen",
-	"Van Henry",
-	"April Tucker",
-	"Ralph Hubbard",
-	"Omar Alexander",
-	"Carlos Abbott",
-	"Miriam Wagner",
-	"Bradley Wilkerson",
-	"Virginia Andrews",
-	"Kelly Snyder",
-];
+const names = interestData;
 
 function getStyles(name, personName, theme) {
 	return {
@@ -41,7 +31,7 @@ function getStyles(name, personName, theme) {
 	};
 }
 
-export default function Industry() {
+export default function Interests() {
 	const theme = useTheme();
 	const [personName, setPersonName] = React.useState([]);
 
@@ -57,7 +47,7 @@ export default function Industry() {
 
 	return (
 		<div>
-			<FormControl fullwidth sx={{ marginBottom: 2, width: "100%" }}>
+			<FormControl sx={{ marginBottom: 2, width: "100%" }}>
 				<InputLabel id="demo-multiple-chip-label">Interests</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"

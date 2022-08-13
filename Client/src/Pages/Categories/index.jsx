@@ -14,7 +14,7 @@ const Categories = () => {
 			<Interests />
 			<div>
 				<Button
-					fullwidth
+					onClick={() => (window.location.href = "/contact")}
 					sx={{
 						width: "100%",
 						background: "#FF725E",

@@ -46,7 +46,7 @@ export default function Industry() {
 
 	return (
 		<div>
-			<FormControl fullwidth sx={{ marginBottom: 1, width: "100%" }}>
+			<FormControl sx={{ marginBottom: 1, width: "100%" }}>
 				<InputLabel id="demo-multiple-chip-label">Preffered Stage</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"

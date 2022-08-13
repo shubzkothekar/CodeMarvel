@@ -56,7 +56,7 @@ const ContactInfo = () => {
 					}}
 					variant="contained"
 				>
-					Next
+					Finish
 				</Button>
 			</Box>
 		</div>
