@@ -32,13 +32,13 @@ function getStyles(name, IdeaName, theme) {
 
 export default function Stage() {
 	const theme = useTheme();
-	const [IdeaName, setPersonName] = React.useState([]);
+	const [IdeaName, setIdeaName] = React.useState([]);
 
 	const handleChange = (event) => {
 		const {
 			target: { value },
 		} = event;
-		setPersonName(
+		setIdeaName(
 			// On autofill we get a stringified value.
 			typeof value === "string" ? value.split(",") : value
 		);
