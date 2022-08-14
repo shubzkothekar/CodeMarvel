@@ -19,18 +19,7 @@ const MenuProps = {
 	},
 };
 
-const names = [
-	"Oliver Hansen",
-	"Van Henry",
-	"April Tucker",
-	"Ralph Hubbard",
-	"Omar Alexander",
-	"Carlos Abbott",
-	"Miriam Wagner",
-	"Bradley Wilkerson",
-	"Virginia Andrews",
-	"Kelly Snyder",
-];
+const names = ["Ideation", "Validation", "Early traction", "Scaling"];
 
 function getStyles(name, personName, theme) {
 	return {
@@ -41,7 +30,7 @@ function getStyles(name, personName, theme) {
 	};
 }
 
-export default function MultipleSelectChip() {
+export default function Industry() {
 	const theme = useTheme();
 	const [personName, setPersonName] = React.useState([]);
 
@@ -49,6 +38,11 @@ export default function MultipleSelectChip() {
 		const {
 			target: { value },
 		} = event;
+		localStorage.setItem(
+			"stage",
+			JSON.stringify(typeof value === "string" ? value.split(",") : value)
+		);
+
 		setPersonName(
 			// On autofill we get a stringified value.
 			typeof value === "string" ? value.split(",") : value
@@ -57,15 +51,17 @@ export default function MultipleSelectChip() {
 
 	return (
 		<div>
-			<FormControl fullwidth sx={{ m: 1, width: "80vw" }}>
-				<InputLabel id="demo-multiple-chip-label">Chip</InputLabel>
+			<FormControl sx={{ marginBottom: 3, width: "100%" }}>
+				<InputLabel id="demo-multiple-chip-label">Preffered Stage</InputLabel>
 				<Select
 					labelId="demo-multiple-chip-label"
 					id="demo-multiple-chip"
-					multiple
+					multiple={localStorage.getItem("type") === "STARTUP" ? false : true}
 					value={personName}
 					onChange={handleChange}
-					input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+					input={
+						<OutlinedInput id="select-multiple-chip" label="Preffered Stage" />
+					}
 					renderValue={(selected) => (
 						<Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
 							{selected.map((value) => (
