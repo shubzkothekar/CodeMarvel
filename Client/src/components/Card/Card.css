@@ -1,0 +1,57 @@
+.card {
+    padding:1rem;
+    width:20rem;
+    background-color: white;
+    height:fit-content
+}
+
+.card-contents {
+    padding:1rem;
+    
+}
+
+.card:hover {
+    transform: scale(1,1);
+}
+
+.card p {
+    font-size:1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.card h3 {
+    margin: 1rem 0;
+}
+
+button.btn-fundraise {
+    background-color: #FF725E;
+    width: 100%
+} 
+
+.collection-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fund-info input[type=range] {
+    width:100%;
+    padding: 1rem 0;
+    accent-color: #FF725E;
+    outline: none;
+    border:none;
+    color: white;
+}
+
+.fund-info input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: rgb(193, 64, 64);
+}
+
+.collection-info strong {
+    margin-right: 12px;
+}
+
+.fund-info {
+    margin: 1rem 0;
+}
