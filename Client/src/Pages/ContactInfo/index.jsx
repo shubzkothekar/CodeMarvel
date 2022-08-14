@@ -2,6 +2,7 @@ import { Box, TextField, Button } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import MuiPhoneNumber from "material-ui-phone-number";
+import axios from "axios";
 
 const ContactInfo = () => {
 	const [email, setEmail] = useState("");
@@ -9,10 +10,34 @@ const ContactInfo = () => {
 	const [mobile, setMobile] = useState("");
 	const [loading, setLoading] = useState(false);
 
+	const signUp = () => {
+		const { getItem } = localStorage;
+
+		const data = {
+			email: localStorage.getItem("email"),
+			password: localStorage.getItem("password"),
+			type: localStorage.getItem("type"),
+			image: localStorage.getItem("image"),
+			name: localStorage.getItem("name"),
+			about: localStorage.getItem("about"),
+			stage: JSON.parse(localStorage.getItem("stage")),
+			industries: JSON.parse(localStorage.getItem("industries")),
+			interests: JSON.parse(localStorage.getItem("interests")),
+			contactEmail: localStorage.getItem("contactEmail"),
+			website: localStorage.getItem("website"),
+			mobile: localStorage.getItem("mobile"),
+		};
+		return axios.post("http://localhost:3000/signup", data);
+	};
+
 	const handleNext = () => {
 		localStorage.setItem("contactEmail", email);
 		localStorage.setItem("website", website);
 		localStorage.setItem("mobile", mobile);
+
+		signUp()
+			.then((result) => console.log(result))
+			.catch((err) => console.log(err));
 	};
 
 	return (

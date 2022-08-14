@@ -7,7 +7,7 @@ import BasicInfo from "./Pages/BasicInfo";
 import Categories from "./Pages/Categories";
 import Login from "./Pages/Login/index";
 import LandingPage from "./Pages/LandingPage/LandingPage";
-import UserProfile from "./Pages/UserProfile/index"
+import UserProfile from "./Pages/UserProfile/index";
 import { Navbar } from "./Pages/Navbar";
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
 				<Route exact path="/categories" element={<Categories />} />
 				<Route exact path="/login" element={<Login />} />
 				<Route path="/" element={<LandingPage />} />
-        <Route path="/user-profile" element={<UserProfile/>}/>
-		<Route path="/navbar" element={<Navbar/>}/>
+				<Route path="/user-profile/:id" element={<UserProfile />} />
+				<Route path="/navbar" element={<Navbar />} />
 			</Routes>
 		</div>
 	);

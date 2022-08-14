@@ -9,6 +9,13 @@ const SignUp = () => {
 	const [pass, setPass] = useState("");
 	const [conPass, setConPass] = useState("");
 
+	if (
+		localStorage.getItem("user") !== "null" &&
+		localStorage.getItem("user") !== null
+	) {
+		window.location.href = "/navbar";
+	}
+
 	const handleNext = () => {
 		localStorage.setItem("email", email);
 		localStorage.setItem("password", pass);

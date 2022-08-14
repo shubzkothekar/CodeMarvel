@@ -53,13 +53,20 @@ const BasicInfo = () => {
 					style={{ border: "1px dashed black" }}
 					src={img}
 					onClick={selectFile}
+					onError={() => setImg(placeholderImg)}
 				></img>
-				<TextField id="outlined-basic" label="Name" variant="outlined" />
+				<TextField
+					id="outlined-basic"
+					label="Name"
+					variant="outlined"
+					onChange={(e) => setName(e.target.value)}
+				/>
 				<TextField
 					id="outlined-multiline-static"
 					label="About"
 					multiline
 					rows={4}
+					onChange={(e) => setAbout(e.target.value)}
 				/>
 				<Button
 					onClick={() => handleNext()}

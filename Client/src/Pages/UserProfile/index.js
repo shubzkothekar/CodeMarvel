@@ -14,6 +14,9 @@ import { BsFillTelephoneInboundFill } from "react-icons/bs";
 import { CgWebsite } from "react-icons/cg";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 const Item = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
 	...theme.typography.body2,
@@ -23,7 +26,28 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function BasicGrid() {
-	return (
+	let { id } = useParams();
+	const [loading, setLoading] = React.useState(true);
+	const [data, setData] = React.useState();
+
+	React.useEffect(() => {
+		axios
+			.post("http://localhost:3000/profile", { _id: id })
+			.then((res) => {
+				console.log(res);
+				if (res.data !== "") {
+					setData(res.data);
+					setLoading(false);
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, []);
+
+	return loading ? (
+		<div></div>
+	) : (
 		<div style={{ marginTop: "3%", marginLeft: "5%", marginRight: "5%" }}>
 			<Box>
 				<Grid container spacing={2}>
@@ -32,19 +56,18 @@ export default function BasicGrid() {
 							<CardMedia
 								component="img"
 								height="210"
-								image="https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg"
+								image={data.image}
 								alt="green iguana"
 							/>
 							<CardContent>
 								<Typography gutterBottom variant="h5" component="div">
-									Name
+									{data.name}
 								</Typography>
 								<Typography variant="body2" color="text.secondary">
-									Lizards are a widespread group of squamate reptiles, with over
-									6,000 species, ranging across all continents except Antarctica
+									{data.about}
 								</Typography>
 								<br></br>
-								<Button
+								{/*<Button
 									sx={{
 										background: "#FF725E",
 										padding: "8px",
@@ -58,7 +81,7 @@ export default function BasicGrid() {
 									variant="contained"
 								>
 									Message
-								</Button>
+								</Button>*/}
 							</CardContent>
 						</Card>
 					</Grid>
@@ -74,7 +97,9 @@ export default function BasicGrid() {
 									>
 										Preferred Stage:
 										<Stack direction="row" spacing={1} sx={{ padding: "1%" }}>
-											<Chip label="Chip Filled" />
+											{data.stage.map((el, index) => (
+												<Chip key={index} label={el} />
+											))}
 										</Stack>
 									</Typography>
 									<Typography
@@ -85,7 +110,9 @@ export default function BasicGrid() {
 									>
 										Industry:
 										<Stack direction="row" spacing={1} sx={{ padding: "1%" }}>
-											<Chip label="Chip Filled" />
+											{data.industries.map((el, index) => (
+												<Chip key={index} label={el} />
+											))}
 										</Stack>
 									</Typography>
 									<Typography
@@ -96,33 +123,35 @@ export default function BasicGrid() {
 									>
 										Interests:
 										<Stack direction="row" spacing={1} sx={{ padding: "1%" }}>
-											<Chip label="Chip Filled" />
+											{data.interests.map((el, index) => (
+												<Chip key={index} label={el} />
+											))}
 										</Stack>
 									</Typography>
 									<hr></hr>
 									<Typography
-										variant="subtitle2"
+										variant="subtitle1"
 										color="text.secondary"
 										component="div"
 										sx={{ padding: "2%" }}
 									>
-										<CgWebsite /> Website:
+										<CgWebsite /> Website : {data.website}
 									</Typography>
 									<Typography
-										variant="subtitle2"
+										variant="subtitle1"
 										color="text.secondary"
 										component="div"
 										sx={{ padding: "2%" }}
 									>
-										<AiTwotoneMail /> Email:
+										<AiTwotoneMail /> Email : {data.contactEmail}
 									</Typography>
 									<Typography
-										variant="subtitle2"
+										variant="subtitle1"
 										color="text.secondary"
 										component="div"
 										sx={{ padding: "2%" }}
 									>
-										<BsFillTelephoneInboundFill /> Phone:
+										<BsFillTelephoneInboundFill /> Phone : {data.mobile}
 									</Typography>
 								</CardContent>
 							</Box>
