@@ -10,10 +10,12 @@ import LandingPage from "./Pages/LandingPage/LandingPage";
 import UserProfile from "./Pages/UserProfile/index"
 import { Navbar } from "./Pages/Navbar";
 import {Chats} from "./Pages/Chats"
+import ChatContextProvider, { ChatContext } from "./Pages/Chats/context/ChatContext";
 
 function App() {
 	return (
 		<div className="App">
+		<ChatContextProvider>
 			<Routes>
 				<Route path="/user-type" element={<UserType />} />
 				<Route exact path="/sign-up" element={<SignUp />} />
@@ -25,7 +27,9 @@ function App() {
         <Route path="/user-profile" element={<UserProfile/>}/>
 		<Route path="/navbar" element={<Navbar/>}/>
 		<Route path="/chats" element={<Chats/>}/>
+
 			</Routes>
+			</ChatContextProvider>
 		</div>
 	);
 }
