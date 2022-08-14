@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const AccessibilityContainer = styled.div`
+<<<<<<< HEAD
 	display: flex;
+=======
+  display: flex;
+>>>>>>> 4a7985bcc73314c24474988272411a0ad032244c
 `;
 
 const RegisterButton = styled.button`
