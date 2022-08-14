@@ -10,10 +10,7 @@ import LandingPage from "./Pages/LandingPage/LandingPage";
 import UserProfile from "./Pages/UserProfile/index";
 import { Navbar } from "./Pages/Navbar";
 
-
-
 function App() {
-<<<<<<< HEAD
 	return (
 		<div className="App">
 			<Routes>
@@ -29,29 +26,6 @@ function App() {
 			</Routes>
 		</div>
 	);
-=======
-  return (
-    <div className="App">
-      
-        <Routes>
-          <Route path="/user-type" element={<UserType />} />
-          <Route exact path="/sign-up" element={<SignUp />} />
-          <Route exact path="/contact" element={<ContactInfo />} />
-          <Route exact path="/basic-info" element={<BasicInfo />} />
-          <Route exact path="/categories" element={<Categories />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/user-profile" element={<UserProfile />} />
-          <Route path="/navbar" element={<Navbar />} />
-		 
-		  
-	
-		
-        </Routes>
-      
-    </div>
-  );
->>>>>>> 4a7985bcc73314c24474988272411a0ad032244c
 }
 
 export default App;
