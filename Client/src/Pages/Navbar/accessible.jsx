@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const AccessibilityContainer = styled.div`
   display: flex;
- 
 `;
 
 const RegisterButton = styled.button`

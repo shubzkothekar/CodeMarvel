@@ -35,7 +35,7 @@ export function Navbar(props) {
 
   return (
     <NavbarContainer>
-      
+      <div style={{color:"#ff275e",fontWeight:"600",fontSize:"20px"}}>startupwings🚀</div>
       <MiddleSection>{!isMobile && <NavLinks />}</MiddleSection>
       <RightSection>
         {!isMobile && <Accessibility />}

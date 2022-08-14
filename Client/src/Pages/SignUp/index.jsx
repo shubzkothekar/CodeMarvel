@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useEffect } from "react";
 
+
 const SignUp = () => {
 	const [email, setEmail] = useState("");
 	const [pass, setPass] = useState("");
@@ -16,6 +17,7 @@ const SignUp = () => {
 	};
 
 	return (
+		
 		<div style={{ margin: "15% 25% 15% 25%" }}>
 			<Box
 				component="form"
@@ -68,6 +70,7 @@ const SignUp = () => {
 					Sign Up
 				</Button>
 			</Box>
+		
 		</div>
 	);
 };
